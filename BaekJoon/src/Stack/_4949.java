@@ -1,13 +1,12 @@
 package Stack;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Stack;
 
 public class _4949 {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
@@ -21,7 +20,8 @@ public class _4949 {
 				break;
 			}
 			
-			sb.append(VSP(msg)).append('\n');
+			sb.append(VSP(msg));
+			sb.append(" ");
 		}
 		System.out.println(sb);
 	}

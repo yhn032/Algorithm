@@ -2,7 +2,7 @@ package Stack;
 
 import java.util.Scanner;
 
-public class _10773 {
+public class _10773 {	// 가장 최근에 쓴 수를 지우는 문제
 	public static int [] moneyClip;
 	public static int size;
 	
