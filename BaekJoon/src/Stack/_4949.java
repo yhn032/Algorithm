@@ -5,29 +5,7 @@ import java.io.InputStreamReader;
 import java.util.Stack;
 
 public class _4949 {
-
-	public static void main(String[] args) throws Exception {
-		// TODO Auto-generated method stub
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringBuilder sb = new StringBuilder();
-		
-		String msg;
-		
-		while(true) {
-			msg = br.readLine();
-			
-			if(msg.equals(".")) {
-				break;
-			}
-			
-			sb.append(VSP(msg));
-			sb.append(" ");
-		}
-		System.out.println(sb);
-	}
-
-	private static Object VSP(String msg) {
-		// TODO Auto-generated method stub
+	public static String Balance(String msg) {
 		Stack<Character> st = new Stack<Character>();
 		
 		for(int i=0; i<msg.length();i++) {
@@ -63,5 +41,24 @@ public class _4949 {
 		}
 
 	}
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringBuilder sb = new StringBuilder();
+		
+		String msg;
+		
+		while(true) {
+			msg = br.readLine();
+			
+			if(msg.equals(".")) 
+				break;
+			
+			sb.append(Balance(msg)).append(" ");
+		}
+		System.out.println(sb);
+	}
+
+	
 
 }
