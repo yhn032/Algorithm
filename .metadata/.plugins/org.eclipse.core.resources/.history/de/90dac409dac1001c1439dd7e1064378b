@@ -1,0 +1,87 @@
+package Queue;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.StringTokenizer;
+
+public class _10866 {
+	
+	static Deque<Integer> q = new LinkedList<Integer>();
+	static StringBuilder sb = new StringBuilder();
+	
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		StringTokenizer st;
+		
+		
+		int size = 0;
+		int front = 0;
+		int rear = 0;
+		int N = Integer.parseInt(br.readLine());
+		
+		while(N --> 0) {
+			st = new StringTokenizer(br.readLine(), " ");
+			
+			switch(st.nextToken()) {
+				case "push_back":
+					push_back(Integer.parseInt(st.nextToken()));
+					break;
+				case "push_front":
+					push_front(Integer.parseInt(st.nextToken()));
+					break;
+				case "pop_back":
+					pop_back();
+					break;
+				case "pop_front":
+					pop_front();
+					break;
+				case "size":
+					sb.append(size).append('\n');
+					break;
+				case "empty":
+					if(q.isEmpty())
+						sb.append(1).append('\n');
+					else
+						sb.append(0).append('\n');
+					break;
+				case "front":
+					
+				case "back":
+			}
+		}
+	}
+
+	private static void pop_front() {
+		// TODO Auto-generated method stub
+		if(q.isEmpty()) {
+			sb.append(-1).append('\n');
+		}else {
+			sb.append(q.pollLast()).append('\n');			
+		}
+	}
+
+	private static void pop_back() {
+		// TODO Auto-generated method stub
+		if(q.isEmpty()) {
+			sb.append(-1).append('\n');
+		}else {
+			sb.append(q.pollLast()).append('\n');			
+		}
+	}
+
+	private static void push_front(int parseInt) {
+		// TODO Auto-generated method stub
+		q.offerFirst(parseInt);
+	}
+
+	private static void push_back(int parseInt) {
+		// TODO Auto-generated method stub
+		q.offerLast(parseInt);
+	}
+
+}

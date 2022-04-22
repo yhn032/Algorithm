@@ -1,0 +1,58 @@
+package Queue;
+
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+import java.util.concurrent.LinkedBlockingDeque;
+
+public class _11866 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//3번째 수를 연쇄적으로 삭제 
+		//3번째 수를 삭제하고 큐를 재구성하는 것은 비효율적
+		//큐는 반드시 front에서 값을 꺼내온다. 그렇다고 front의 위치를 임의적으로 옮긴다면  front앞에 있는 수는 나가리가 되버림
+		//결론. 삭제하는 수를 front에 오도록 해준다. -> front의 위치에 삭제하는 값으로 이동시킨다. 
+		//앞에 있는 수를 뽑아서 rear에 갖다 붙이기
+		Scanner sc = new Scanner(System.in);
+		
+		Deque<Integer> q = new LinkedList<Integer>();
+		StringBuilder sb = new StringBuilder();
+		StringTokenizer st = new StringTokenizer(sc.nextLine(), " ");
+		
+		int N = Integer.parseInt(st.nextToken());
+		int K = Integer.parseInt(st.nextToken());
+		
+		//큐에 값 초기화
+		for(int i=1; i<=N;i++) {
+			q.offer(i);
+		}
+		
+		sb.append('<');
+		
+		//아래의 과정을 큐가 빌때까지 반복
+		// f		   r
+		// 1 2 3 4 5 6 7
+		// 3번째 수 3을 삭제하기 위해 offer 2번, poll 2번 반복
+		
+		// f		   r
+		// 3 4 5 6 7 1 2
+		// f값 삭제
+		
+		// f		 r
+		// 4 5 6 7 1 2
+		while(q.size() > 1) {
+			for(int i=0; i<K-1; i++) {
+				int val = q.poll();
+				q.offer(val);
+			}
+			sb.append(q.poll()).append(", ");
+		}
+		
+		sb.append(q.poll()).append('>');
+		
+		sc.close();
+	}
+
+}

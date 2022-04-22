@@ -20,7 +20,8 @@ public class _10798 {
 				text[i][k] = temp.charAt(k);
 			}
 		}
-		
+		System.out.println("강한친구 대한육군");
+		System.out.println("강한친구 대한육군");
 		for(int t = 0; t < 15; t++) {
 			for(int m = 0; m < 5 ; m++) {
 				if(text[m][t] == '\0')

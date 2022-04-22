@@ -1,0 +1,76 @@
+package Queue;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.StringTokenizer;
+
+public class _10866 {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringBuilder sb = new StringBuilder();
+		StringTokenizer st;
+		
+		Deque<Integer> q = new LinkedList<Integer>();
+		int size = 0;
+		int front = 0;
+		int rear = 0;
+		int N = Integer.parseInt(br.readLine());
+		
+		while(N --> 0) {
+			st = new StringTokenizer(br.readLine(), " ");
+			
+			switch(st.nextToken()) {
+				case "push_back":
+					push_back(Integer.parseInt(st.nextToken()));
+					break;
+				case "push_front":
+					push_front(Integer.parseInt(st.nextToken()));
+					break;
+				case "pop_back":
+					pop_back();
+					break;
+				case "pop_front":
+					pop_front();
+					break;
+				case "size":
+					sb.append(size).append(" ");
+					break;
+				case "empty":
+					if(q.isEmpty())
+						sb.append(1).append(" ");
+					else
+						sb.append(0).append(" ");
+					break;
+				case "front":
+					
+				case "back":
+			}
+		}
+	}
+
+	private static void pop_front() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void pop_back() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void push_front(int parseInt) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void push_back(int parseInt) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
