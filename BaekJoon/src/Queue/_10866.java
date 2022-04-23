@@ -9,13 +9,14 @@ import java.util.StringTokenizer;
 
 public class _10866 {
 	
-	static Deque<Integer> q = new LinkedList<Integer>();
-	static StringBuilder sb = new StringBuilder();
+	
 	
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
+		Deque<Integer> q = new LinkedList<Integer>();
+		StringBuilder sb = new StringBuilder();
 		StringTokenizer st;
 		
 		int N = Integer.parseInt(br.readLine());
@@ -25,10 +26,10 @@ public class _10866 {
 			
 			switch(st.nextToken()) {
 				case "push_back":
-					q.addFirst(Integer.parseInt(st.nextToken()));
+					q.offerLast(Integer.parseInt(st.nextToken()));
 					break;
 				case "push_front":
-					q.offerLast(Integer.parseInt(st.nextToken()));
+					q.offerFirst(Integer.parseInt(st.nextToken()));
 					break;
 				case "pop_back":
 					if(q.isEmpty()) {
@@ -59,12 +60,14 @@ public class _10866 {
 					}else {
 						sb.append(q.peekFirst()).append('\n');
 					}
+					break;
 				case "back":
 					if(q.isEmpty()) {
 						sb.append(-1).append('\n');
 					}else {
 						sb.append(q.peekLast()).append('\n');
 					}
+					break;
 			}
 		}
 		System.out.println(sb);

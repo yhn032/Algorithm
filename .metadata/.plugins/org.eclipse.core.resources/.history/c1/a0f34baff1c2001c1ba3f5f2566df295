@@ -1,0 +1,94 @@
+package Queue;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.StringTokenizer;
+
+public class _1966 {
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringBuilder sb = new StringBuilder();
+		//테스트 데이터의 개수 
+		int T = Integer.parseInt(br.readLine());
+		
+		while(T-- > 0) {
+			
+			StringTokenizer st = new StringTokenizer(br.readLine());
+			
+			//문서의 개수
+			int N = Integer.parseInt(st.nextToken());
+			//내가 궁금한 문서의 위치
+			int M = Integer.parseInt(st.nextToken());
+			
+			LinkedList<int[]> q = new LinkedList<>();
+			st = new StringTokenizer(br.readLine());
+			
+			//큐에 중요도와 위치(인덱스)데이터 저장
+			for(int i=0; i<N; i++) {
+				//큐에 각 요소를  int[] 배열형태로 저장하는데,  인덱스(저장할 특정 위치)값과 중요도(데이터)를 삽입한 배열을 저장한다. 
+				q.add(new int[] {i, Integer.parseInt(st.nextToken())});
+				/*
+				EX> 4 2
+				    1 2 3 4가 입력이라고 가정
+				q의 저장구조
+				idx	0	1	2	3
+				val	1	2	3	4
+				*/
+			}
+			
+			//출력횟수를 카운트 해줄 변수
+			int count = 0;
+			
+			while(!q.isEmpty()) {
+				
+				boolean can = true; 
+				//큐의 반환타입은 int[]이다. 큐의 제네릭 참고.
+				//값을 전달할때, 인덱스값과 중요도가 저장된 배열의 형태로 전달
+				//int f[] = {3};
+				//int b[] = f;
+				//위와 같은 형태의 전달방식
+				//q.poll()연산을 하면, 배열이 전달됨. 애초에 add할때부터 위치값을 기억하도록 저장했다.
+				int front[] = q.poll();
+				// 이 연산을 수행하면 다음과 같아짐
+				/*
+				q의 저장구조					front의 저장
+				idx	1	2	3				0
+				val	2	3	4				1
+				*/
+
+				for(int [] s : q) {
+					if(s[1] > front[0])
+						can = false;
+				}
+
+				if(can) {
+					count++;
+					if(front[0]==M) break;
+				}else
+					q.add(front);
+				
+			}
+			
+			sb.append(count).append('\n');
+		}
+		System.out.println(sb);
+		
+
+	
+		
+		/*
+		Iterator<Integer> iter = q.iterator();
+		while(iter.hasNext()) {
+			
+		}
+		*/
+		//잠시 보류,,, 
+		
+		
+	}
+}

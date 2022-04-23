@@ -1,0 +1,5 @@
+package DataStrucInterface;
+
+public interface List {
+
+}

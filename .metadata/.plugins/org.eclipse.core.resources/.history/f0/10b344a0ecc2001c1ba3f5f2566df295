@@ -1,0 +1,73 @@
+package Queue;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.StringTokenizer;
+
+public class _1966 {
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringBuilder sb = new StringBuilder();
+		//테스트 데이터의 개수 
+		int T = Integer.parseInt(br.readLine());
+		
+		while(T-- > 0) {
+			
+			StringTokenizer st = new StringTokenizer(br.readLine());
+			
+			//문서의 개수
+			int N = Integer.parseInt(st.nextToken());
+			//내가 궁금한 문서의 위치
+			int M = Integer.parseInt(st.nextToken());
+			
+			LinkedList<int[]> q = new LinkedList<>();
+			st = new StringTokenizer(br.readLine());
+			
+			//큐에 중요도와 위치(인덱스)데이터 저장
+			for(int i=0; i<N; i++) {
+				q.add(new int[] {i, Integer.parseInt(st.nextToken())});
+			}
+			
+			
+			//출력횟수를 카운트 해줄 변수
+			int count = 0;
+			
+			while(!q.isEmpty()) {
+				
+				boolean able = true; 
+				int front[] = q.poll();
+				
+				for(int [] s : q) {
+					if(s[1] > front[1])
+						able = false;
+				}
+				if(able) {
+					count++;
+					if(front[0]==M) break;
+				}else
+					q.add(front);
+				
+			}
+			
+			sb.append(count);
+		}
+		
+
+	
+		
+		/*
+		Iterator<Integer> iter = q.iterator();
+		while(iter.hasNext()) {
+			
+		}
+		*/
+		//잠시 보류,,, 
+		
+		
+	}
+}
