@@ -1,0 +1,71 @@
+package Kakao;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Set;
+import java.util.StringTokenizer;
+
+/*
+	각 유저당 한 번에 1명 신고가능
+	단, 동일인물에 대해서 신고횟수는 1로 count. 한 사람이 특정인물을 여러번 신고해도 count되지 않음
+	신고한 사람이 이용정지가 되면 그 사람을 신고한 사람에게 메일 전송을 하는데 이 횟수를 출력하라.(return, id_list에 담긴 순서대로)
+*/
+
+
+class Solution3 {
+    public int[] solution(String[] id_list, String[] report, int k) {
+    	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    	StringTokenizer st;
+    	int count=0;
+    	String [][] result = new String[id_list.length][2];
+    	
+    	for(int i=0; i<report.length;i++) {
+    		result[i] = report[i].split(" ");
+    	}
+    	
+    	Arrays.sort(result);
+    	
+        int[] answer = {};
+        return answer;
+    }
+}
+public class ReceiveIncriminateResult {
+	public static void main(String[] args) {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
+		int count=0;
+		
+		String id_list[] = {"muzi", "frodo", "apeach", "neo"};
+		String report[]  = {"muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"};
+		
+		//신고 내역 
+		String [][] result = new String[report.length][2];
+
+		//유저별로 신고당한 횟수를 저장
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+		//유저별로 신고한 유저를 저장
+		HashMap<String, Set<String>> map2 = new HashMap<String, Set<String>>();
+			
+		for(int i=0; i<report.length;i++) {
+			result[i] = report[i].split(" ");
+			String name = result[i][1];
+			map.put(name, map.getOrDefault(name, 0)+1);
+			System.out.printf("%s %d", name,map.get(result[i][1]));
+		}
+		
+		
+		
+		
+		
+		//Arrays.sort(result);
+		
+		/*
+		 * for(int i=0; i<result.length;i++) { for(int k=0; k<result[i].length; k++) {
+		 * System.out.print(result[i][k] + " "); } System.out.println(); }
+		 */
+	}
+}
