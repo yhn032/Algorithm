@@ -21,16 +21,17 @@ class Solution3 {
     	//신고 내역 
     	int[] answer = new int[id_list.length];
     	
-    	//유저별로 신고당한 횟수를 저장
-    	HashMap<String, Integer> map = new HashMap<String, Integer>();
-    	//유저별로 신고한 유저를 저장
-    	HashMap<String, HashSet<String>> map2 = new HashMap<String, HashSet<String>>();
-    	
-    	for(int i=0; i<id_list.length;i++) {
-    		String name = id_list[i];//피신고자의 이름
-    		map.put(name, i); //신고자에 대해서 인덱스값과 함께 저장
-    		map2.put(name, new HashSet<>());
-    	}
+    	//리스트에 있는 유저명과 배열의 인덱스값을 저장
+        HashMap<String, Integer> mapIdx = new HashMap<String, Integer>();
+        //신고당한 유저와 이 사람을 신고한 유저들을 저장
+        HashMap<String, HashSet<String>> map = new HashMap<>();
+        
+        //기본 셋팅
+        for(int i=0; i<id_list.length;i++) {
+            String name = id_list[i];//사용자 ID
+            mapIdx.put(name, i); //사용자ID에 대해서 인덱스값과 함께 저장
+            map.put(name, new HashSet<>());
+        }
     	
     	for(int i=0; i<report.length;i++) {
     		String result[] = report[i].split(" ");
@@ -39,23 +40,22 @@ class Solution3 {
     		//신고당한 사람의 ID
     		String b = result[1];
     		//신고당항 사람의 id와 매핑된 value값에다가 신고한 사람의 id를 추가한다. 단, HashSet의 특성상 중복은 불가능하다. -> 한 사람이 여러번 신고해도 1 count
-    		map2.get(b).add(a);
-    		
+    		map.get(b).add(a);
     	}
-    	//map2를 순환
-    	for(int i=0; i<id_list.length;i++) {
-    		//id_list[i]를 신고한 사람들이 저장되어 있음
-    		HashSet<String> send = map2.get(id_list[i]);
-    		if(send.size() >= k) { //이용 정지대상이라면
-    			
-    			//아까 정한 임의의 인덱스로 id_list에 저장된 id와 같은 순서로 메일통보 횟수 저장
-    			//위에서 뽑은 send내의 있는 사용자에게 메일을 보내는 횟수를 +1
-    			for(String name : send) {
-    				answer[map.get(name)]++;
-    				//System.out.print(answer[i]);
-    			}
-    		}
-    	}
+		//map2를 순환
+		for(int i=0; i<id_list.length;i++) {
+			//id_list[i]를 신고한 사람들이 저장되어 있음
+			HashSet<String> send = map.get(id_list[i]);
+			if(send.size() >= k) { //이용 정지대상이라면
+				
+				//아까 정한 임의의 인덱스로 id_list에 저장된 id와 같은 순서로 메일통보 횟수 저장
+				//위에서 뽑은 send내의 있는 사용자에게 메일을 보내는 횟수를 +1
+				for(String name : send) {
+					answer[mapIdx.get(name)]++;
+					//System.out.print(answer[i]);
+				}
+			}
+		}
         return answer;
     }
 }
