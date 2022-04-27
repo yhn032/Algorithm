@@ -1,0 +1,33 @@
+package Queue;
+
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class _2164 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//버리고 밑으로, 버리고 밑으로 반복하다가 카드가 1장일때의 값을 출력
+		Scanner sc = new Scanner(System.in);
+		Deque<Integer> q = new LinkedList<Integer>();
+		
+		int N = sc.nextInt();
+		for(int i=1; i<=N; i++) {
+			q.offer(i);
+		}
+		
+		
+		while(q.size() > 1) {
+			q.remove();
+			int temp = q.poll();
+			q.offer(temp);
+		}
+		
+		System.out.println(q.peek());
+		
+		
+		sc.close();
+	}
+
+}

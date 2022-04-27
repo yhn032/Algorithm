@@ -1,0 +1,70 @@
+package Kakao;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
+class Solution4 {
+    public int[] solution(int[] progresses, int[] speeds) {
+        int[] answer = {};
+        return answer;
+    }
+}
+public class developmentFunction {
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int progress[] = {95, 90, 99, 99, 80, 99};
+		int speeds[] = {1, 1, 1, 1, 1, 1};
+		int answer[] = new int[100];
+		
+		//개발 완료까지 남은 날
+		int finish_day[] = new int[progress.length];
+		
+		for(int i=0; i<progress.length;i++) {
+			
+			//100%까지 남은 기간
+			int day_remain = 100 - progress[i];
+			
+			//나누어 떨어지면
+			if(day_remain%speeds[i] == 0) {
+				finish_day[i] = day_remain/speeds[i];
+			} 
+			else {//나누어 떨어지지 않으면 남은 작업량을 위해 하루 더 해야 함
+				finish_day[i] = day_remain/speeds[i] + 1;
+			}
+			//System.out.print(finish_day[i] + " ");
+		}
+		
+		Queue<Integer> list = new LinkedList<>();
+		List<Integer> list2 = new ArrayList<>();
+		
+		for(int i=0; i<finish_day.length;i++) {
+			list.add(finish_day[i]);
+		}
+		
+		int time = 0;
+		//
+		while(!list.isEmpty()) {
+			int count = 0;
+			time++;
+			while(!list.isEmpty() && time >= list.peek()) {
+				list.poll();
+				count++;
+				if(list.peek() > time+1) {
+					list2.add(count);
+				}
+			}
+		}
+		
+		for(int j=0; j<list2.size();j++) {
+				
+			answer[j] = list2.get(j);
+			System.out.print(answer[j] + " ");
+			
+		}
+	}
+}

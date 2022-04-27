@@ -1,0 +1,16 @@
+package Kakao;
+
+class Solution4 {
+    public int[] solution(int[] progresses, int[] speeds) {
+        int[] answer = {};
+        return answer;
+    }
+}
+public class developmentFunction {
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
