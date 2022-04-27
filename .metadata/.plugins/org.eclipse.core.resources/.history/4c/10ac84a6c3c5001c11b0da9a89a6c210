@@ -1,0 +1,32 @@
+package Greedy;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class _11399 {
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		// 문제에서 푸는 방법을 알려줬다. 처리시간이 짧은 사람부터 오름차순으로 정렬하라..
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		int N = Integer.parseInt(br.readLine()); 
+		
+		int [][]wait = new int[N][2];
+		
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		
+		for(int i=0; i<N;i++) {
+			wait[i][0] = i+1;
+			wait[i][1] = Integer.parseInt(st.nextToken());
+		}
+		
+		for(int n =0; n<wait.length;n++) {
+			for(int m=0; m<wait[n].length;m++) {
+				System.out.printf("%d %d\n", wait[n][m], wait[n][m]);
+			}
+		}
+	}
+
+}

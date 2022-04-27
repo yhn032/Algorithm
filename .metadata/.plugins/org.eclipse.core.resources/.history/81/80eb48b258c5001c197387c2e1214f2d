@@ -1,0 +1,30 @@
+package Main;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class _1063 {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		System.out.printf("%s", 'A');
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		StringBuilder sb = new StringBuilder();
+		int [][]game_pan = new int[8][8];
+		//각 열은 영문 대문자, 0번지 (게임판의 가장 왼쪽이) A 
+		//각 행은 숫자     , 0번지 (게임판의 가장 밑이)	1	
+		String king_pos = st.nextToken();
+		String stone_pos = st.nextToken();
+		int N = Integer.parseInt(st.nextToken());
+		
+		
+		
+		while(N-->0) {
+			
+		}
+	}
+
+}

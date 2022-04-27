@@ -1,0 +1,77 @@
+package Main;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.StringTokenizer;
+
+public class _8979 {
+	static class Rank{
+		
+		int nationNum = 0;
+		int gold = 0;
+		int silver = 0;
+		int bronze = 0;
+		
+		Rank(int nationNum, int gold, int silver, int bronze){
+			this.nationNum = nationNum;
+			this.gold = gold;
+			this.silver = silver;
+			this.bronze = bronze;
+		}
+
+		
+	}
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
+
+		
+		st = new StringTokenizer(br.readLine());
+		//국가의 수
+		int N = Integer.parseInt(st.nextToken());
+		//순위를 알고 싶은 국가번호
+		int K = Integer.parseInt(st.nextToken());
+		
+		Rank rk[] = new Rank[N];
+
+		for(int i=0; i<N;i++) {
+			st = new StringTokenizer(br.readLine());
+			int nation = Integer.parseInt(st.nextToken());
+			int gold = Integer.parseInt(st.nextToken());
+			int silver = Integer.parseInt(st.nextToken());
+			int bronze = Integer.parseInt(st.nextToken());
+			rk[i] = new Rank(nation, gold, silver, bronze);
+		}
+		
+		
+		Arrays.sort(rk, new Comparator<Rank>() {
+
+			@Override
+			public int compare(Rank o1, Rank o2) {
+				// TODO Auto-generated method stub
+				
+				if(o1.gold == o2.gold) {
+					if(o1.silver == o2.silver) {
+						if(o1.bronze == o2.bronze) {
+							return 0;
+						}
+						return o1.bronze - o2.bronze;
+					}
+					return o1.silver-o2.silver;
+				}
+				return o1.gold-o2.gold;
+			}
+			
+		});
+		
+		for(int i =0; i<N;i++) {
+			System.out.printf("%d %d %d %d\n", rk[i].nationNum, rk[i].gold, rk[i].silver, rk[i].bronze);
+		}
+		
+	}
+
+}

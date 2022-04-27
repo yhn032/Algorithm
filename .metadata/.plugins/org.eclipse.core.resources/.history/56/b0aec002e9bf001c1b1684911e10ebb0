@@ -1,5 +1,0 @@
-package DataStrucInterface;
-
-public interface StackInterface {
-
-}

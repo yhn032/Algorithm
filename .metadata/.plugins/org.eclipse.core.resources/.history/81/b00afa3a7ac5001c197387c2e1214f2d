@@ -1,0 +1,56 @@
+package Main;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class _1063 {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		//char a = 'B';
+		//System.out.printf("%d", 70-a);
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+		StringBuilder sb = new StringBuilder();
+		int [][]game_pan = new int[8][8];
+		//각 열은 영문 대문자, 0번지 (게임판의 가장 왼쪽이) A 
+		//각 행은 숫자     , 0번지 (게임판의 가장 밑이)	1	
+		String king_pos = st.nextToken();
+		String stone_pos = st.nextToken();
+		int N = Integer.parseInt(st.nextToken());
+		
+		//킹의 행열 참조값 변환
+		int king_pos_x = (king_pos.charAt(0) - 65); //A~H -> 0~7
+		int king_pos_y = (8-king_pos.charAt(1)); //   8~1 -> 0~7
+		
+		//돌의 행열 참조값 변환
+		int stone_pos_x = (stone_pos.charAt(0) - 65); //A~H -> 0~7
+		int stone_pos_y = (8-stone_pos.charAt(1)); //   8~1 -> 0~7
+		
+		while(N-->0) {
+			//왕과 돌의 위치 초기화
+			game_pan[king_pos_x][king_pos_y] = 1;
+			game_pan[stone_pos_x][stone_pos_y] = 9;
+			
+			String command[] = br.readLine().split(" ");
+			for(String s : command) {
+				switch(s) {
+					case "R":
+						if(game_pan[king_pos_x][king_pos_y+1] == 9) { //돌을 만나면
+							//ㅅㅂ
+						}
+					case "L":
+					case "B":
+					case "T":
+					case "RT":
+					case "LT":
+					case "RB":
+					case "LB":
+				}
+			}
+		}
+	}
+
+}
