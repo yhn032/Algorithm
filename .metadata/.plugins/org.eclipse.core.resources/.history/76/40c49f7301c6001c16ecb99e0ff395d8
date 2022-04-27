@@ -1,0 +1,76 @@
+package Queue;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.StringTokenizer;
+
+public class _5430AC {
+
+	public static void main(String[] args) throws Exception, IOException {
+		// TODO Auto-generated method stub
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int T = Integer.parseInt(br.readLine());// T
+		StringBuilder sb = new StringBuilder();
+		
+		for(int i=0; i<T; i++) {
+			String[] p = br.readLine().split("");// p
+			int n = Integer.parseInt(br.readLine());// n
+			String s = br.readLine();
+			String s2 = s.substring(1, s.length()-1);
+			StringTokenizer st = new StringTokenizer(s2,",");
+			List<String> list = new ArrayList<String>();
+			boolean soon = true;// 순방향일때
+			boolean flag = false;
+			for(int k=0; k<n; k++) {//배열
+				list.add(st.nextToken());
+			}
+			
+			for(String jj : list) {
+				System.out.print(jj + " ");
+			}
+			
+			
+			// logic
+			for(int k=0; k<p.length; k++) {
+				if(p[k].equals("R")) {// R이면 방향을 바꾼다
+					soon = !soon;
+				}else if(p[k].equals("D")) {
+					
+					try {
+						if(soon==true)// 순방향일때 앞에서부터 지우기
+							list.remove(0);
+						else// 역방향일때 뒤에서부터 지우기
+							list.remove(list.size()-1);
+					} catch (IndexOutOfBoundsException e) {
+						// 비어있으면 에러출력
+						sb.append("error\r\n");
+						flag = true;
+						break;
+					}
+					
+				}	
+				
+			}//end for p
+			
+			if(flag==false) {//에러 출력을 하지 않았다면
+				// 순방향이면 앞부터 출력
+				if(soon==true) sb.append(list.toString().replaceAll(" ", "")+"\r\n");
+				else {// 역방향이면 내림차정렬해서 출력
+					list.sort(Comparator.reverseOrder());
+					sb.append(list.toString().replaceAll(" ", "")+"\r\n");
+				}
+			}
+			
+		}//end for T
+		
+		//맨 뒤에 \r\n지우기
+		sb.deleteCharAt(sb.length()-1);
+		sb.deleteCharAt(sb.length()-1);
+		System.out.print(sb);
+	}
+
+}

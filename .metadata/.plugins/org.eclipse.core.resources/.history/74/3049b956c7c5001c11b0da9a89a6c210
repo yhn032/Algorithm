@@ -1,0 +1,16 @@
+package Greedy;
+
+public class _1541 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s = "0009";
+		String w = "01";
+		int a = Integer.parseInt(s);
+		int b = Integer.parseInt(w);
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(a-b);
+	}
+
+}

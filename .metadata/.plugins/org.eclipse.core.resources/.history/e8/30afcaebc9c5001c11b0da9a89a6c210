@@ -1,0 +1,27 @@
+package Greedy;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class _1541 {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		/*
+		 * String s = "0009"; String w = "01"; int a = Integer.parseInt(s); int b =
+		 * Integer.parseInt(w); System.out.println(a); System.out.println(b);
+		 * System.out.println(a-b);
+		 */
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String sentence = br.readLine();
+				
+		String[] operand = sentence.split("[-]");
+		
+		for(int i =0; i<operand.length;i++) {
+			System.out.println(operand[i]);
+		}
+	}
+
+}

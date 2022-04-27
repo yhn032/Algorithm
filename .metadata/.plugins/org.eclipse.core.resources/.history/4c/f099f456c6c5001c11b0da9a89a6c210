@@ -1,0 +1,12 @@
+package Greedy;
+
+public class _1541 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s = "0009";
+		int a = Integer.parseInt(s);
+		System.out.println(a);
+	}
+
+}
