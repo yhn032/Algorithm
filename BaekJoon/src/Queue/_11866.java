@@ -7,7 +7,6 @@ import java.util.StringTokenizer;
 import java.util.concurrent.LinkedBlockingDeque;
 
 public class _11866 {
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//3번째 수를 연쇄적으로 삭제 

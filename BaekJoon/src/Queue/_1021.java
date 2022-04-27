@@ -9,7 +9,6 @@ import java.util.LinkedList;
 import java.util.StringTokenizer;
 
 public class _1021 {
-
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
