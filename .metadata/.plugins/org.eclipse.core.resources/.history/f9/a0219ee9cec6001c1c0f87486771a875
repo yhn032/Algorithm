@@ -1,0 +1,54 @@
+package Main;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class temp {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		//StringTokenizer st = new StringTokenizer(br.readLine());
+		//위는 선언과 동시에 초기화까지 한 상태. 이미 st객체에는 입력값 br.readLine()이 들어온건데 밑에 반복문에서 또 받으면 이전에 받은 입력은 사용도 못하고 사라진다.
+		;
+		StringBuffer sb = new StringBuffer();
+
+		int [] n = new int[4];
+
+		/*
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		for (int i = 0; i<n.length; i++) {
+			//StringTokenizer st = new StringTokenizer(br.readLine());
+			n[i] = Integer.parseInt(st.nextToken());
+			System.out.println(n[i]);
+		}
+		*/
+
+		//반복문 내부에서 입력을 받아도 되긴 하는데 이 상태에서 출력을 해버리면, n[0]는 출력이 되지. 
+		//근데 다음 반복이 돌아서 i=1이 됐는데, 또 다시 st로 입력을 받으면 전에 받은 입력값은 없어지고 새로 또 입력을 받겠다는 소리야. br.readLine()이게 입력해라~ 이런 명령이잖아.
+		//그러니 아에 선언과 입력 자체를 반복문 밖에서 받는게 좋아. 원래 의도하려던 대로 하려면 아래와 같이 반복을 두번 해야함
+		
+		
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		//StringTokenizer st = new StringTokenizer(br.readLine());
+		for(int k=0; k<n.length;k++) {
+			n[k] = Integer.parseInt(st.nextToken());
+		}
+		
+		for(int i=0; i<n.length;i++) {
+			System.out.print(n[i] + " ");
+		}
+			
+		
+		
+		/*
+		 	0 0 1 0
+		 	1 0 1 0
+		 	1 1 0 1
+		 	1 1 1 1
+		 */
+	}
+
+}

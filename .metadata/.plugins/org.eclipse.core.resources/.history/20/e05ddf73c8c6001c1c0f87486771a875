@@ -1,0 +1,29 @@
+package Main;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class temp {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		//StringTokenizer st = new StringTokenizer(br.readLine());
+		//위는 선언과 동시에 초기화까지 한 상태. 이미 st객체에는 입력값 br.readLine()이 들어온건데 밑에서 또 받아서 그럼.
+		;
+		StringBuffer sb = new StringBuffer();
+
+		int [] n = new int[4];
+
+		//n[0] = Integer.parseInt(st.nextToken());
+
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		for (int i = 0; i<n.length; i++) {
+			n[i] = Integer.parseInt(st.nextToken());
+			System.out.println(n[i]);
+		}
+	}
+
+}
