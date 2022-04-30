@@ -9,7 +9,6 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class _18258 {
-
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

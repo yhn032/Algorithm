@@ -5,7 +5,6 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class _2164 {
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//버리고 밑으로, 버리고 밑으로 반복하다가 카드가 1장일때의 값을 출력
