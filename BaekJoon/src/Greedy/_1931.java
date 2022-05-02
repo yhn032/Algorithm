@@ -46,7 +46,7 @@ public class _1931 {
 				}else {
 					return a1.end_time - a2.end_time;
 				}
-				
+			//Greedy(탐욕) 	-> 매 선택의 순간에서 가장 최적의 답을 찾아나가는 과정
 			}
 		});
 		//배치할 수 있는 전체 회의의 수

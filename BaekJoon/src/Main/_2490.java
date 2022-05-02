@@ -1,9 +1,10 @@
 package Main;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class _2490 {
-
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -98,6 +99,8 @@ public class _2490 {
 		}
 		System.out.println(sb);
 		sc.close();
+		
+		ArrayList<Integer> list = new ArrayList<Integer>(5);
 		
 	}
 

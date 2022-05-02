@@ -1,5 +1,7 @@
 package Kakao;
 
+import java.util.Arrays;
+
 class Solution5 {
 	static int move_x[] = {-1, 1, 0, 0};
 	static int move_y[] = {0, 0, -1, 1};
@@ -80,11 +82,8 @@ public class image {
 		int answer[] = new int[2];
 		
 		Solution5 s = new Solution5();
-		answer = s.solution5(m, n, picture);
 		
-		for(int i=0; i<answer.length;i++) {
-			System.out.print(answer[i] + " ");
-		}
+		System.out.println(Arrays.toString(s.solution5(m, n, picture)));
 	}
 
 }

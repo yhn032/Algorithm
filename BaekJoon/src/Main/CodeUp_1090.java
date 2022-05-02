@@ -1,6 +1,5 @@
 package Main;
 
-import java.io.BufferedReader;
 import java.util.Scanner;
 
 public class CodeUp_1090 {
@@ -8,10 +7,10 @@ public class CodeUp_1090 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		
+			
 		String input[] = sc.nextLine().split(" ");
 		
-		int a = Integer.parseInt(input[0]);
+		int a = Integer.parseInt(input[0]);	
 		int r = Integer.parseInt(input[1]);
 		int n = Integer.parseInt(input[2]);
 		
