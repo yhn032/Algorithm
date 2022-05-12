@@ -35,7 +35,7 @@ class Solution1 {
 	public String solution(String[] participant, String[] completion) {
 		String answer = "";
 		// 맵에 중복없이 값을 저장해주기 위해서 hashmap을 사용합니다.
-		Map<String, Integer> athletes = new HashMap<String, Integer>();
+		HashMap<String, Integer> athletes = new HashMap<String, Integer>();
 		// participants의 운동선수들을 맵에 저장하고 Key값에는 운동선수의 이름을, value 값에는 1을 저장합니다.
 		// 완주한 선수들을 같은 맵에 저장하는데 똑같이 key에는 운동선수의 이름을, value에는 1을 저장합니다.
 		// hashmap은 중복값을 저장하지 못하기 때문에 같은 값이 입력되려고 하면 value에 1을 +하도록 설계메소드를 사용해줍니다.
@@ -52,13 +52,28 @@ class Solution1 {
 			// 따라서 동명이인인 선수만 value가 +2로 카운팅 되어 있을 것이다. 나머지는 1
 			athletes.put(s, athletes.getOrDefault(s, 0) + 1);
 		}
+		//participant를 반복으로 조회하면 당연히 두번의 키 값을 조회하므로, 값이 2개 나오는데 이건 반복이 아니라 그냥 두 번 호출한거임
+		for(String s : participant) {
+			System.out.print(athletes.get(s) + " "); 
+		}
+		System.out.println();
+		//athletes즉 map을 탐색하면 1번밖에 안나옴
+		for(String s : athletes.keySet()) {
+			System.out.print(athletes.get(s) + " "); 
+		}
 
 		for (String n : completion) {
-			// 완주한 참여자들은 위에서 value를 모두 0으로 저장했으니 getOrDefault결과 0이 반환되고 +1을 하므로 value값이 모두
-			// 1로 바뀐다.
-			// 단, 이때 완주하지 못한 선수만 value가 0으로 남아있다. 추가로 동명이인의 경우만 +1 이므로
+			// 완주한 참여자들은 위에서 value를 모두 1로 저장했으니 getOrDefault결과 1이 반환되고 -1을 하므로 value값이 모두
+			// 0로 바뀐다.
+			// 단, 이때 완주하지 못한 선수만 value가 1로 남아있다. 추가로 동명이인의 경우만 +1 이므로
 			// 기존의 값을 가져온다면 1에서 -1을 해주면 완주한 선수는 0이되고, 동명이인의 경우만 +1로 0이 아니다.
 			athletes.put(n, athletes.get(n) - 1);
+		}
+		
+		System.out.println();
+		
+		for(String s : athletes.keySet()) {
+			System.out.print(athletes.get(s) + " "); 
 		}
 		/*
 		Iterator<Map.Entry<String, Integer>> iter = athletes.entrySet().iterator();

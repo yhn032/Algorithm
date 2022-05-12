@@ -1,16 +1,26 @@
 package DateStrucImple;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 public class HashSetEx {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		
+		List<Integer> list = new LinkedList<Integer>();
+		
+		
+		//LinkedList<Integer> list2 = new LinkedList<Integer>();
+		
+		
 		/*
 		Set
 		순서x, 중복x
@@ -101,22 +111,82 @@ public class HashSetEx {
 		
 		
 		//예제 2
-		Set set = new HashSet();
-		
-		//set의 크기가 6보다 작은동안 1~45의 정수를 출력
-		for(int i=0; set.size()<6 ; i++) {
-			int num = (int)(Math.random()*45)+1;
-			set.add(num);
-		}
-		
-		List list = new LinkedList(set);//set은 정렬이 안되므로 set의 데이터를 list를 새로만들어서 옮긴다.
-		Collections.sort(list);//정렬은 리스트만 가능합니다.
-		System.out.println(list);
+		/*
+		 * Set set = new HashSet();
+		 * 
+		 * //set의 크기가 6보다 작은동안 1~45의 정수를 출력 for(int i=0; set.size()<6 ; i++) { int num =
+		 * (int)(Math.random()*45)+1; set.add(num); }
+		 * 
+		 * ******List list = new LinkedList(set);//set은 정렬이 안되므로 set의 데이터를 list를 새로만들어서 옮긴다.
+		 * Collections.sort(list);//정렬은 리스트만 가능합니다. System.out.println(list);
+		 */
 		
 		//예제 3
 		//HashSet은 객체를 저장하기 전에 기존에 같은 객체가 있는지 확인
 		//같은 객체가 없으면 저장하고, 있으면 저장하지 않는다.
 		//boolean add(Object o)는 저장할 객체의 equals()와 hashCode()를 호출하여 중복인지 확인한다.
+		//일반적인 wrapper클래스들의 데이터는 비교기준이 기본적으로 정해져 있지만, 
+		//사용자 정의 객체는 비교기준을 직접 명시해주어야 합니다.
+		HashSet set = new HashSet();
+		set.add(new Person("David", 10));
+		set.add(new Person("David", 10));
+		
+		System.out.println(set);
+		
+		HashSet set2 = new HashSet();
+		set2.add(3);
+		set2.add(6);
+		set2.add(6);
+		set2.add("aaa");
+		set2.add("aaa");
+		System.out.println(set2);
+		
+		HashSet set3 = new HashSet();
+		set3.add(new Test3("길동", 12));
+		set3.add(new Test3("길동", 12));
+		System.out.println(set3);
 	}
+}
+class Test3{
+	String name;
+	int age;
+	
+	public Test3(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+}
 
+class Person {
+	String name; 
+	int age;
+	
+	public Person(String name, int age) {
+		// TODO Auto-generated constructor stub
+		this.name = name;
+		this.age = age;
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return name + ":" + age; 
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		if(obj instanceof Person) {
+			Person tmp = (Person)obj;
+			return name.equals(tmp.name) && age == tmp.age; 
+		}
+		return false;
+	}
+	
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		//return (name+age).hashCode();
+		return Objects.hash(name, age);
+	}
 }

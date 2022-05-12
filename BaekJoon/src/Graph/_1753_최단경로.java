@@ -79,6 +79,9 @@ public class _1753_최단경로 {
 			
 			//현재 노드의 인접리스트를 탐색한다. 즉, 현재 노드와 연결된 노드의 에지를 탐색하면서 최단거리 배열을 갱신한다. 
 			for(int i=0; i<list[current_v].size(); i++) {
+				
+				
+				
 				Edge tmp = list[current_v].get(i);//현재 노드 번호와 연결된 노드의 번호와 에지 정보를 가져온다. 
 				int next  = tmp.vertex; //인접한 번호
 				int value = tmp.value;  //위 번호와 연결된 에지의 가중치
