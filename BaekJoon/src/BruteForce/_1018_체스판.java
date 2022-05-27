@@ -12,7 +12,6 @@ public class _1018_체스판 {
 		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st;
-		StringBuilder sb = new StringBuilder();
 		
 		st = new StringTokenizer(br.readLine());
 		
@@ -31,12 +30,12 @@ public class _1018_체스판 {
 		
 		//모든 경우의 수 탐색 
 		//현재 위치에서 상하 좌우가 다른 값이어야 한다. 
-		//초기위치에 색칠되는 값에 따라 체스판이 다르다.
+		//초기위치에 색칠되는 값에 따라 체스판이 다르다. 초기위치 흰, 블, 초기위치 블, 흰 -> 2*
 		//8x8단위로 끊어서 각 단위마다 탐색
 		//각 단위 마다 수정의 횟수의 최솟값을 구해서 저장하고, 매 단위마다 산출된 최솟값과 비교하여 더 작은 값을 셋팅한다.
 		for(int i=0; i<temp_n; i++) {
 			for(int k=0; k<temp_m; k++) {
-				find(i,k);//시작위치에서 탐색 시작
+				check(i,k);//시작위치에서 탐색 시작
 			}
 		}
 		
@@ -50,13 +49,14 @@ public class _1018_체스판 {
 		 */
 	}
 
-	private static void find(int x, int y) {
+	private static void check(int x, int y) {
 		// TODO Auto-generated method stub
 		int end_x = x+8; //탐색할 체스판의 끝 인덱스 
 		int end_y = y+8;
 		//각 단위마다 카운트하기 위해 전역변수 0으로 초기화
 		int cnt = 0;
 		
+		//C : 비교기준 -> 체스판의 색이 적절하게 ㅅ칠해져 있느냐? 아니라면 cnt++ 색칠할 칸의 개수를 세야 하니까.
 		char C = map[x][y];// 시작값
 		
 		for(int i=x; i<end_x; i++) {
@@ -67,7 +67,7 @@ public class _1018_체스판 {
 				}
 				//현재 위치에서 다음위치는 값이 달라야 하기 때문에
 				//C에 저장된 값을 바꾸어 주어야 한다.
-				C = (C=='W') ? 'B' : 'W';
+				C = (C=='W') ? 'B' : 'W';//C = !C;
 			}
 			//각 행의 마지막 위치와 다음 행의 첫 위치는 값이 같아야 한다.
 			//값을 바꾸면 안되는데, 위에서 값을 바꾸었기 때문에 다시 바꿔줘서 원상태로 해야 한다.

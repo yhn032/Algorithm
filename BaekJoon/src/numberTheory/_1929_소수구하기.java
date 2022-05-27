@@ -73,10 +73,13 @@ public class _1929_소수구하기 {
 			}
 		}
 		
-		for(int i=M;i<=N;i++){
-			if(arr[i] != 0) {
-				System.out.print(i + " ");
-			}
+		/*
+		 * for(int i=M;i<=N;i++){ if(arr[i] != 0) { System.out.print(i + " "); } }
+		 */
+		
+		for(int i : arr) {
+			if(i==0) continue;
+			System.out.print(i + " ");
 		}
 		
 	}

@@ -56,6 +56,12 @@ public class _12891_DNA {
 			Add(DNA[i]);
 		}
 		
+		
+		//2 0 1 1
+		
+		//0 2 1 1		-> 3
+		//'CCTG'GATTG
+		
 		//초기 윈도우가 조건을 만족한다면 카운트 증가
 		if(checkSecret == 4) cnt++;
 		

@@ -32,6 +32,7 @@ public class _3273_두수의합 {
 		int cnt = 0;
 		
 		while(start_idx < end_idx) {
+			
 			if(arr[start_idx] + arr[end_idx] == x) {
 				cnt++;
 				start_idx++;
