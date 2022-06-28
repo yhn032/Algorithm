@@ -30,6 +30,7 @@ public class _1325_효율적인해킹 {
 			list.add(new ArrayList<Integer>());
 		}
 		
+		long start = System.currentTimeMillis();
 		for(int i=0; i<m; i++) {
 			st = new StringTokenizer(br.readLine());
 			
@@ -60,6 +61,9 @@ public class _1325_효율적인해킹 {
 				System.out.print(i + " ");
 			}
 		}
+		
+		long end = System.currentTimeMillis();
+		System.out.println((end-start)/1000.0);
 	}
 	private static void BFS(int i) {
 		// TODO Auto-generated method stub
