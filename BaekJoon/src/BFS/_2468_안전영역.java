@@ -87,7 +87,6 @@ public class Main {
 	}
 }
 
-
 class safe {
 	int x;
 	int y;
