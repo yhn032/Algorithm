@@ -12,9 +12,7 @@ class Solution {
         Set<Integer> ss = new HashSet();
         for(int i=0; i<nums.length; i++){
             ss.add(nums[i]);
-            
         }
-        
         answer = ss.size() > max ? max : ss.size();
         return answer;
     }
