@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class _2294_동전2 {
+public class _2294_ {
 	static int N, K;
 	static int INF = 20000000;
 	static int dp[][];

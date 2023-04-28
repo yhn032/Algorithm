@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class _9463_스티커 {
+public class _9463_ {
 	
 	static int N;
 	static int [][]sticker;
@@ -18,14 +18,14 @@ public class _9463_스티커 {
 		
 		int T = Integer.parseInt(br.readLine());
 		
-		//테스트 케이스만큼 반복
+		//�뀒�뒪�듃 耳��씠�뒪留뚰겮 諛섎났
 		while(T --> 0) {
 			
-			//열의 개수
+			//�뿴�쓽 媛쒖닔
 			N = Integer.parseInt(br.readLine());
 			sticker = new int[2][N];
 			
-			//스티커 점수 초기화
+			//�뒪�떚而� �젏�닔 珥덇린�솕
 			for(int i=0; i<2; i++) {
 				st = new StringTokenizer(br.readLine());
 				for(int j=0; j<N; j++) {
@@ -34,7 +34,7 @@ public class _9463_스티커 {
 			}
 
 			DP = new int[N][3];
-			//-1로 세팅
+			//-1濡� �꽭�똿
 			for(int []i : DP) Arrays.fill(i, -1);
 			
 			

@@ -1,3 +1,5 @@
+package BFS;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -6,7 +8,7 @@ import java.util.List;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Main {
+public class _2468_ {
 	
 	static boolean visited[][];
 	static int area[][];
@@ -14,7 +16,7 @@ public class Main {
 	static int cnt = 0;
 	static int N = 0;
 	
-	//                 상  하   좌  우
+	//                 �긽  �븯   醫�  �슦
 	static int dx[] = {-1, 1,  0, 0};
 	static int dy[] = { 0, 0, -1, 1};
 	
@@ -30,7 +32,7 @@ public class Main {
 		visited = new boolean[N][N];
 		List<Integer> height = new ArrayList<Integer>();
 		
-		//영역과 높이 리스트 초기화
+		//�쁺�뿭怨� �넂�씠 由ъ뒪�듃 珥덇린�솕
 		for(int i=0; i<N; i++) {
 			st = new StringTokenizer(br.readLine());
 			for(int j=0; j<N; j++) {

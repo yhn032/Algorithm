@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class _10818_최소최대 {
+public class _10818_ {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
