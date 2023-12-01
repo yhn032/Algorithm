@@ -1,6 +1,6 @@
 import java.util.*;
 import java.util.stream.*;
-class Solution {
+class Solution_LargerOne {
     public int[] solution(int[] array) {
     // SOL 1 >
     // Map<Integer, Integer> map = new HashMap<>();

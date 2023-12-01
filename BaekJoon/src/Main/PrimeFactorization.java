@@ -1,5 +1,5 @@
 import java.util.*;
-class Solution {
+class Solution_Prime {
     public int[] solution(int n) {
         int[] answer = {};
         Set<Integer> list = new HashSet<>();

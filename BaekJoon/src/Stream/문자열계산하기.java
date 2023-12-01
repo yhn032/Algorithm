@@ -1,4 +1,6 @@
-class Solution {
+import java.util.Arrays;
+
+class Solution_CalcString {
     public int solution(String my_string) {
         //SOL 1 >
         int answer = 0;
@@ -18,6 +20,6 @@ class Solution {
         return answer;
         
         //SOL 2 >
-        return Arrays.stream(my_string.replaceAll("- ", "-").replaceAll("\\+ ", "").trim().split(" ")).mapToInt(Integer::parseInt).sum();
+        //return Arrays.stream(my_string.replaceAll("- ", "-").replaceAll("\\+ ", "").trim().split(" ")).mapToInt(Integer::parseInt).sum();
     }
 }

@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-class Solution {
+class Solution_appearOnce {
     public String solution(String s) {
         return Arrays.stream(s.split("")) //한 글자씩 잘라서 String 배열을 만들고 이를 stream화 한다.
                 .collect(Collectors.groupingBy(s1 -> s1))

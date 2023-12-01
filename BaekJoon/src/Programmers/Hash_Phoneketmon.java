@@ -4,7 +4,7 @@
   3. 반이 더 크다면 사이즈 값을, 더 작다면 반의 값을 넣는다.
 */
 import java.util.*;
-class Solution {
+class Solution_Poket {
     public int solution(int[] nums) {
         int answer = 0;
         int max = nums.length/2;

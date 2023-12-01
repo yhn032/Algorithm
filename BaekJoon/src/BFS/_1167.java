@@ -27,7 +27,7 @@ public class _1167 {
 		//노드번호가 1번부터 시작하므로 0번지는 버리고 하는게 맘 편하다
 		
 		for(int i=1; i<=V;i++) {
-			list[i] = new ArrayList<edge2>();
+			list[i] = new ArrayList<>();
 		}
 		
 		//인접리스트 초기화 

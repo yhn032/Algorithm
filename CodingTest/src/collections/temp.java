@@ -5,8 +5,6 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-import collections.backjoon_1931.Time;
-
 public class temp {
 
 	

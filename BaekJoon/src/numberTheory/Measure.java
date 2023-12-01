@@ -1,5 +1,5 @@
 import java.util.*;
-class Solution {
+class Solution_Measure {
     public int[] solution(int n) {
         int[] answer = {};
         List<Integer> set = new ArrayList<>();

@@ -1,4 +1,4 @@
-class Solution {
+class Solution_findNum {
     public int solution(int num, int k) {
         //SOL 1 > 
         int answer = 0;
@@ -12,6 +12,6 @@ class Solution {
         else return answer;
         
         //SOL 2 >
-        return ("-" + num).indexOf(String.valueOf(k));
+        //return ("-" + num).indexOf(String.valueOf(k));
     }
 }
